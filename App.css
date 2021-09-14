@@ -1,0 +1,120 @@
+.App{
+  background-color: rgba(7, 147, 228, 0.774);
+  text-align: center;
+  height: 100vh;
+}
+.Heading{
+  width:70%;
+  margin-top:100px;
+  margin-left:200px;
+  margin-right:50px;
+  background-color: rgba(173, 216, 226, 0.582);
+  padding: 20px;
+  color:#fff;
+}
+.todo-list{
+    list-style: none;
+    display: flex;
+    justify-content:space-between;
+    width: 35%;
+    padding: 10px;
+}
+.completed{
+  text-decoration: line-through;
+}
+.todo-list li{
+  background-color:#fff;
+  padding: 5px; 
+  border-radius: 7px;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+ color:#000;
+}
+.todo-list li:hover{
+  animation: pulse 1s infinite;
+  transition: .3s;
+  background-color:rgba(7, 147, 228, 0.774);
+  color:#fff;
+  cursor: pointer;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(.9);
+  }
+    100% {
+    transform: scale(1);
+  }
+}
+
+.task-list{
+  list-style: none;
+  background-color: rgba(7, 147, 228, 0.774);
+  color:#fff;
+  padding: 5px;
+  font-size: 18px;
+  display: flex;
+  justify-content:space-between;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+header{
+  background-color: #fff;
+  color: #000;
+  font-size: 20px;
+}
+h1 , hr{
+  color:#fff;
+}
+.button-add{
+  width: 40px;
+  height: 34px;
+  margin-top: 8px;
+  background-color: #5292f1;
+  color: #fff;
+  border-radius: 4px;
+  border: #fff;
+}
+
+.sidebar-pane ul{
+  list-style-type: none;
+  display: flex;
+}
+.strike{
+  text-decoration: line-through;
+}
+.sidebar-list-items{
+  background-color: rgb(92, 167, 224);
+  margin:5px;
+  padding:10px;
+}
+.btn-primary {
+  color: #fff;
+  background-color:  #0d6efd;
+  border-color: #0d6efd;
+  width: 94px;
+  height: 34px;
+  margin-top: 8px;
+}
+.forms-control{
+  height: 48px;
+  width: 95%;
+  display: block;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,
+    box-shadow .15s ease-in-out;
+}
+.line {
+  text-decoration: line-through;
+}
