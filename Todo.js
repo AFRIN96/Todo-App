@@ -1,46 +1,30 @@
-import React, { Component } from "react";
-
-class Todo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      todo: "",
-    };
-  }
-
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
+import React from "react";
+import {FaTrash } from "react-icons/fa";
+const Todo = ({ text, todo, todos, setTodos }) => {
+  const deleteTodo = () => {
+    setTodos(todos.filter((t) => t.id !== todo.id));
   };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Todo:" ,this.state.todo);
-    alert("Task added");
-  };
-  render() {
-    const { todo } = this.state;
-    return (
-      <div className="App-header">
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Todo:
-            <input
-              type="text"
-              name="todo"
-              value={todo}
-              placeholder="type in the task"
-              onChange={this.handleChange}
-            />
-          </label>
-          <button type="submit">Add Task</button>
-          <br />
-          <span>{this.state.todo}</span>
-        </form>
-      </div>
+  const completeTodo = () => {
+    setTodos(
+      todos.map((item) => {
+        if (item.id === todo.id) {
+          return {
+            ...item,
+            completed: !item.completed,
+          };
+        }
+        return item;
+      })
     );
-  }
-}
-
+  };
+  return (
+    <div className="task-list">
+    <li className={`todo-list ${todo.completed ? "completed" : " "}`}>
+    <input type="checkbox" onClick={completeTodo}/>
+     {text} 
+     <FaTrash onClick={deleteTodo} />
+     </li>
+    </div>
+  );
+};
 export default Todo;
